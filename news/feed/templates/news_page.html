@@ -1,0 +1,34 @@
+{% extends 'base/base.html' %}
+
+{% block main %}
+  <div class="news-card">
+    <h2 class="news-title">{{ news_item.header}}</h2>
+    <h3 class="news-description">{{ news_item.theme}}</h3>
+    <p class="news-content">{{ news_item.content}}</p>
+    <p class="news-author">{{ news_item.author}}</p>
+    <a href="/" class="news-link">Вернуться назад</a>
+  </div>
+
+  <form action="/news/?id={{ news_item.id }}" method="post">
+    {% csrf_token %}
+    <div class="add-comment-form">
+
+      {{ form}}
+    </div>
+    <button type="submit" class="add-comment-button">Оставить комментарий</button>
+  </form>
+
+  <div class="news-comments">
+    <h3>Комментарии:</h3>
+    {% for comment in news_items %}
+      <div class="comment">
+        <div class="comment-author">
+          {{ comment.author}}
+        </div>
+        <div class="comment-text">
+          {{ comment.comment}}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}

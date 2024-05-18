@@ -1,0 +1,14 @@
+<span class="menu-username">{{ request.user }}</span>
+<div class="menu-block">
+  <span class="menu-title"></span>
+  {% for menu_item in menu_items %}
+    <div class="menu-item">
+      <a href="{{ menu_item.link }}" class="menu-link">{{ menu_item.text }}</a>
+    </div>
+  {% endfor %}
+
+  <form action="/accounts/logout/" method="post" class="form-logout">
+    {% csrf_token %}
+    <button type="submit" class="button-logout">Выйти</button>
+  </form>
+</div>

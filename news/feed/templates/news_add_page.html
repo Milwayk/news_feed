@@ -1,0 +1,21 @@
+{% extends 'base/base.html' %}
+
+{% block main %}
+<form action="/news/add/" class="add-news-form" method="post">
+  {% csrf_token %}
+
+  <div class="add-news-row">
+    Заголовок: {{ form.header }}
+  </div>
+
+  <div class="add-news-row">
+    Тема: {{ form.theme}}
+  </div>
+
+   {{ form.content }}
+
+   <br>
+
+  <button type="submit" class="add-news-button"> Опубликовать </button>
+</form>
+{% endblock %}

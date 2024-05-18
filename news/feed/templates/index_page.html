@@ -1,0 +1,18 @@
+{% extends 'base/base.html' %}
+
+{% block main %}
+  <section class="news-section">
+    <header class="news-section-header">
+      <h2 class="news-section-title">Актуальные новости</h2>
+    </header>
+    {% for news_item in news_items %}
+      <div class="news-card">
+        <h2 class="news-title">{{ news_item.header }}</h2>
+        <h3 class="news-description">{{ news_item.theme }}</h3>
+        <p class="news-content">{{ news_item.content }}</p>
+        <p class="news-author">{{ news_item.author }}</p>
+        <a href="/news/?id={{ news_item.id }}" class="news-link">Просмотреть запись на отдельной странице</a>
+      </div>
+    {% endfor %}
+  </section>
+{% endblock %}
