@@ -7,8 +7,10 @@
     </div>
   {% endfor %}
 
-  <form action="/accounts/logout/" method="post" class="form-logout">
-    {% csrf_token %}
-    <button type="submit" class="button-logout">Выйти</button>
-  </form>
+  {% if request.user.is_authenticated %}
+    <form action="/accounts/logout/" method="post" class="form-logout">
+      {% csrf_token %}
+      <button type="submit" class="button-logout">Выйти</button>
+    </form>
+  {% endif %}
 </div>
