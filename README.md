@@ -20,17 +20,6 @@ This website is created as a pet project
     <li>HTML</li>
     <li>CSS</li>
 </ul>
-    
-<h2>Note :</h2>
-<h3>To start using the project, follow these instructions:</h3>
-
-<ol>
- <li>Create a folder to store the project files.</li>
- <li>In the command line, navigate to the folder by typing "cd folder_name".</li>
- <li>Next, create a virtual environment using the command "python -m venv venv".</li>
- <li>To activate the virtual environment, use the command "venv\Scripts\activate".</li>
- <li>Install the Django module by running "pip install django".</li>
-</ol>
   
 <h2>Usage :</h2>
 
